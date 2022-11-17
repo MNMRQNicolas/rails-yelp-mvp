@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <h1><%= @restaurant.name %></h1>
+      <p><%= @restaurant.address %></p>
+      <p><%= @restaurant.phone_number %></p>
+      <p><%= @restaurant.category, collection: Restaurant::CATEGORY %></p>
+      <ul>
+      <% @restaurant.reviews.each do |review| %>
+        <li><%= review.content %></li>
+      <% end %>
+      </ul>
+      <p><%= link_to "Return at home", restaurants_path %></p>
+    </div>
+  </div>
+</div>
